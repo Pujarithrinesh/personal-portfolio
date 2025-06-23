@@ -1,0 +1,94 @@
+/* Projects Section Styles */
+.projects {
+  background-color: var(--bg-secondary);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.project-card {
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  height: 250px;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+
+.project-content {
+  padding: var(--space-6);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.project-card h3 {
+  font-size: var(--font-size-xl);
+  color: var(--accent-color);
+  margin-bottom: var(--space-4);
+}
+
+.project-card p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.project-card.coming-soon {
+  background-color: var(--bg-primary);
+  border: 2px dashed var(--neutral-500);
+}
+
+.project-card.coming-soon h3 {
+  color: var(--text-primary);
+}
+
+.project-card.coming-soon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    var(--bg-primary) 25%, 
+    rgba(100, 255, 218, 0.05) 25%, 
+    rgba(100, 255, 218, 0.05) 50%, 
+    var(--bg-primary) 50%, 
+    var(--bg-primary) 75%, 
+    rgba(100, 255, 218, 0.05) 75%);
+  background-size: 20px 20px;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.project-card.coming-soon .project-content {
+  position: relative;
+  z-index: 1;
+}
+button{
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: blueviolet;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
